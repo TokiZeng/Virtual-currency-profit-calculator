@@ -25,9 +25,27 @@ body {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 38px;
     margin-bottom: 20px;
     color: #ecf0f1; /* 標題顏色 */
+}
+
+.title-image {
+    width: 320px; /* 圖片的寬度 */
+    height: 280px; /* 圖片的高度 */
+    margin: 0; /* 沒有上下左右間距 */
+    object-fit: cover; /* 確保圖片完全填充容器 */
+    display: block;
+}
+
+/* 僅在桌面版將圖片移動  */
+@media (min-width: 768px) {
+    .title-image {
+        position: relative;
+        margin-bottom: -220px; /* 將圖片與下面的區塊距離縮小 */
+        top: -190px;
+        right: -20px;
+    }
 }
 
 .input-group {
