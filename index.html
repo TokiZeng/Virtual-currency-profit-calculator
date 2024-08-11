@@ -12,6 +12,7 @@
         <div class="input-group">
             <label for="cryptoSymbol">選擇交易對：</label>
             <input type="text" id="cryptoSymbol" placeholder="輸入幣種代號 (如 BTC)">
+            <label for="cryptoSelect" style="margin-top: 10px;">預設交易對：</label>
             <select id="cryptoSelect" size="5" style="width:100%; margin-top: 10px;"></select>
         </div>
         <div class="input-group">
@@ -27,24 +28,32 @@
             <input type="number" id="sellPrice" placeholder="輸入賣出價格">
         </div>
         <div class="input-group">
-            <label for="quantityType">選擇數量單位：</label>
+            <label id="quantityTypeLabel" for="quantityType">選擇數量單位：</label>
             <select id="quantityType">
                 <option value="crypto">使用幣種數量</option>
                 <option value="usdt">使用USDT數量</option>
             </select>
         </div>
         <div class="input-group">
-            <label for="quantity">交易數量：</label>
+            <label id="quantityLabel" for="quantity">交易數量：</label>
             <input type="number" id="quantity" placeholder="輸入交易數量">
         </div>
         <div class="input-group">
             <label for="feeRate">手續費率 (%)：</label>
             <input type="number" id="feeRate" placeholder="輸入手續費率" value="0">
         </div>
+        <div class="input-group">
+            <label for="profitDisplay">顯示獲利結果為：</label>
+            <select id="profitDisplay">
+                <option value="crypto">顯示為幣種</option>
+                <option value="usdt">顯示為USDT</option>
+            </select>
+        </div>
         <button id="calculateBtn">計算獲利</button>
         <div class="results">
             <p>買入成本：<span id="buyCost">0</span></p>
             <p>賣出收入：<span id="sellRevenue">0</span></p>
+            <p>手續費：<span id="feeAmount">0</span></p>
             <p>最終獲利：<span id="profit">0</span></p>
         </div>
     </div>

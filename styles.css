@@ -1,23 +1,32 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #2c3e50; /* 應用新的背景色 */
+    color: #ecf0f1; /* 全局文字顏色 */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
     margin: 0;
+    padding: 10px 10px 40px 10px; /* 上面減少10px，下面增加20px */
+    box-sizing: border-box; /* 確保 padding 和 border 被包含在寬度計算中 */
 }
 
 .calculator-container {
-    background-color: #fff;
+    background-color: #34495e; /* 應用新的容器背景色 */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 調整陰影透明度 */
     text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0 40px 0; /* 上下居中，確保上方和下方有足夠空間 */
+    box-sizing: border-box; /* 確保 padding 和 border 被包含在寬度計算中 */
 }
 
 h1 {
+    font-size: 24px;
     margin-bottom: 20px;
+    color: #ecf0f1; /* 標題顏色 */
 }
 
 .input-group {
@@ -29,21 +38,25 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #ecf0f1; /* 標籤顏色 */
 }
 
-input[type="number"] {
+input[type="number"], input[type="text"], select {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box; /* 確保 padding 被包含在寬度計算中 */
+    background-color: #34495e; /* 輸入框背景色 */
+    color: #ecf0f1; /* 輸入框文字顏色 */
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
+    color: #ecf0f1; /* 按鈕文字顏色 */
+    background-color: #007bff; /* 按鈕背景色 */
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -51,7 +64,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* 按鈕懸停背景色 */
 }
 
 .results {
@@ -61,4 +74,48 @@ button:hover {
 .results p {
     font-size: 18px;
     margin: 5px 0;
+    color: #ecf0f1; /* 結果文字顏色 */
+}
+
+/* 價格變動的顏色 */
+.price-up {
+    color: #2ecc71; /* 價格上漲顏色 */
+}
+
+.price-down {
+    color: #e74c3c; /* 價格下跌顏色 */
+}
+
+.price-neutral {
+    color: #ecf0f1; /* 價格無變動顏色 */
+}
+
+/* 桌面主機的寬版樣式 */
+@media (min-width: 768px) {
+    .calculator-container {
+        max-width: 800px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        text-align: left;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 10px;
+    }
+
+    input[type="number"], input[type="text"], select, button {
+        width: 100%;
+    }
+
+    .results {
+        grid-column: span 2;
+        margin-top: 20px;
+    }
 }
